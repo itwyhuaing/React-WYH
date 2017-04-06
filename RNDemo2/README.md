@@ -83,7 +83,7 @@ store.dispatch(addTodo('Learn Redux'));
 ```
 import { createStore } from 'redux';
 const store = createStore(reducer);
-注释：createStore接受 Reducer 作为参数，生成一个新的 Store。以后每当store.dispatch发送过来一个新的 Action，就会自动调用 Reducer，得到新的 State。
+注释：createStore接受 Reducer 作为参数，生成一个 Store。以后每当store.dispatch发送过来一个新的 Action，就会自动调用 Reducer，得到新的 State。
 ```
 
 * 由于 Reducer 是纯函数，就可以保证同样的State，必定得到同样的 View。但也正因为这一点，Reducer 函数里面不能改变 State，必须返回一个全新的对象
@@ -144,6 +144,9 @@ let unsubscribe = store.subscribe(() =>
 ```
 
 * 4> Store 提供了getState() 方法 ： 获取当前时刻的 State。
+
+* 5> 简要关系图：
+  ![image](https://github.com/itwyhuaing/YHReactDemo/blob/master/RNDemo2/images/redux_com.png)
 
 ### 参考资料
 * [Redux 入门教程（一）：基本用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
