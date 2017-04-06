@@ -41,9 +41,11 @@
     1. test，是一段正则，表示进行匹配的资源类型。
     2. exclude ，指定应该被忽略的文件。
     3. query ， 2种写法
-  
+
 ### 参考资料
 * [NPM常用命令](http://www.cnblogs.com/PeunZhang/p/5553574.html)
 * [webpack基础+webpack配置文件常用配置项介绍+webpack-dev-server](http://www.cnblogs.com/QxQstar/p/5961387.html)
 * [npm package.json属性详解](http://www.cnblogs.com/tzyy/p/5193811.html#_h1_20)
 * [WebPack介绍](http://www.68kejian.com/app/detail.html?id=76&&c=442&&name=WebPack介绍)
+##### 系列文章
+* [react+redux框架配置从无到有直到正常运行全流程（上）](http://blog.csdn.net/lx376693576/article/details/54591142) 、[ react+redux框架配置从无到有直到正常运行全流程（下）](http://blog.csdn.net/lx376693576/article/details/54602957)
