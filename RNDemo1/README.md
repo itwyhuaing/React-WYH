@@ -6,7 +6,7 @@
 * run 工程。命令行：npm start
 
 ## 新建工程 ： 从0到1
-* 环境配置，[安装Node.js和npm](http://www.jianshu.com/p/d35e1b495dd8) ；在全局中安装 webpack：npm install webpack -g
+* 环境配置，[安装Node.js和npm(Mac OS X 10.11.6)](http://www.jianshu.com/p/d35e1b495dd8) , [React开发环境搭建(Window)](https://github.com/lostlz/first-react-project)；在全局中安装 webpack：npm install webpack -g
 
 * 新建目录 RNDemo1 ，然后终端中cd到该目录下 ,在该目录下生成 package.json 文件 ；如下图，
   ![image](https://github.com/itwyhuaing/YHReactDemo/blob/master/RNDemo1/images/d1_1.png)
