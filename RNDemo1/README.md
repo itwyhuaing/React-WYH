@@ -49,3 +49,6 @@
 * [WebPack介绍](http://www.68kejian.com/app/detail.html?id=76&&c=442&&name=WebPack介绍)
 ##### 系列文章
 * [react+redux框架配置从无到有直到正常运行全流程（上）](http://blog.csdn.net/lx376693576/article/details/54591142) 、[ react+redux框架配置从无到有直到正常运行全流程（下）](http://blog.csdn.net/lx376693576/article/details/54602957)
+
+* [深入浅出React（一）：React的设计哲学 - 简单之美](http://www.infoq.com/cn/articles/react-art-of-simplity)、[深入浅出React（二）：React开发神器Webpack](http://www.infoq.com/cn/articles/react-and-webpack)、[深入浅出React（三）：理解JSX和组件
+](http://www.infoq.com/cn/articles/react-jsx-and-component/)
