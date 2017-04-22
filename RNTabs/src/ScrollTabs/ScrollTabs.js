@@ -133,9 +133,10 @@ class ScrollTabs extends React.Component{
                         return (
                           <div className="tab_item_cl" id={tmp_id}>
                             <div className="tab_item_content" id={content_id} onClick={(e) => {
+                              console.log("111111");
                               var clicked_index = e.target.id.substr(16,e.target.id.length);
-                              console.log("e :"+e);
-                              console.log("e.target :"+e.target);
+                              console.log("e :",e);
+                              console.log("e.target :",e.target);
                               this.scrollToShowContent(parseInt(clicked_index));
 
                             }}>{itemText}</div>
