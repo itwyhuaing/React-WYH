@@ -6,6 +6,10 @@
 * run 工程。命令行：npm start
 
 ## Redux 基本概念 和 API
+
+#### 基本认识
+Redux 提供的主要功能：全局数据管理，包括数据的更新、存储、数据变化通知。
+
 ###### Store
 * Store 就是保存数据的地方，类似于数据库。整个应用只能有一个 Store。Redux 提供createStore这个函数，用来生成 Store。
 

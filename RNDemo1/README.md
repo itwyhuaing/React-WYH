@@ -21,6 +21,40 @@
   ![image](https://github.com/itwyhuaing/YHReactDemo/blob/master/RNDemo1/images/d4_4.png)
 
 ## 补充
+* js 文件
+```
+var React = require('react');
+
+class TestView extends React.Component {
+生命周期
+      constructor(props) {
+          super(props);
+          this.state = {
+            headerInfo:{},
+
+          };
+          renderThis = this;
+      }
+
+      componentWillMount(){
+        console.log("componentWillMount");
+      }
+
+    render() {
+
+        return (
+             <div id="main_container">
+             </div>
+           )
+    }
+
+    componentDidMount(){
+      console.log("componentDidMount");
+    }
+
+}
+export default TestView;
+```
 * 配置文件 package.json 及 webpack.config.js 的简单介绍如下图：
  ![image](https://github.com/itwyhuaing/YHReactDemo/blob/master/RNDemo1/images/pz_1.png)
 
