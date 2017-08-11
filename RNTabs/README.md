@@ -12,7 +12,7 @@
 * 效果图展示
 
 
-![image](https://github.com/itwyhuaing/YHReactDemo/tree/master/RNTabs/image/效果图展示.gif)
+![image](https://github.com/itwyhuaing/YHReactDemo/blob/master/RNTabs/image/效果图展示.gif)
 
 
 
