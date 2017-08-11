@@ -9,6 +9,12 @@
 * Tab 上的 item 又后台数据而定
 * 一屏无法全部显示 item 时，Tab 可以横向滚动
 * 点击 item 或 滚动 Tab 下方的内容区域：1> 可视区垂直方向上滚动，相应内容区显示在 Tab 正下方 2>Tab 悬浮至导航栏下方  3> Tab在水平方向上做相应的移动  
+* 效果图展示
+
+
+![image](https://github.com/itwyhuaing/YHReactDemo/tree/master/RNTabs/image/效果图展示.gif)
+
+
 
 ## 补充
 * 新建工程 及 界面搭建可参考 Demo1 与 Demo2
