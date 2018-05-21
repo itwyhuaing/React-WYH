@@ -201,4 +201,16 @@
     return message;
 }
 
+
++ (NIMMessage *)msgWithLink:(NTESLinkAttachment *)attachment
+{
+    NIMMessage *message               = [[NIMMessage alloc] init];
+    NIMCustomObject *customObject     = [[NIMCustomObject alloc] init];
+    customObject.attachment           = attachment;
+    message.messageObject             = customObject;
+    message.apnsContent = @"发来了链接信息";
+    return message;
+}
+
+
 @end

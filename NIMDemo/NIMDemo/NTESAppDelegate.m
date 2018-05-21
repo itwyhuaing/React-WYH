@@ -191,6 +191,9 @@ NSString *NTESNotificationLogout = @"NTESNotificationLogout";
     NSString *account = [data account];
     NSString *token = [data token];
     
+    // wyhuaing6688  57f0bf50d09812206856b7a30c23d634
+    NSLog(@"\n %@ \n\n %@ \n",account,token);
+    
     //如果有缓存用户名密码推荐使用自动登录
     if ([account length] && [token length])
     {
@@ -226,6 +229,9 @@ NSString *NTESNotificationLogout = @"NTESNotificationLogout";
     [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
     NTESLoginViewController *loginController = [[NTESLoginViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginController];
+//    UIViewController *vc = [[UIViewController alloc] init];
+//    vc.view.backgroundColor = [UIColor whiteColor];
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
 }
 

@@ -32,7 +32,9 @@
                    @"NTESChartletAttachment",
                    @"NTESWhiteboardAttachment",
                    @"NTESRedPacketAttachment",
-                   @"NTESRedPacketTipAttachment"
+                   @"NTESRedPacketTipAttachment",
+                   // 添加图文链接消息
+                   @"NTESLinkAttachment"
                    ];
         _sessionCustomconfig = [[NTESSessionCustomContentConfig alloc] init];
         _chatroomTextConfig  = [[NTESChatroomTextContentConfig alloc] init];

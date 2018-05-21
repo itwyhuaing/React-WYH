@@ -63,6 +63,10 @@
 #import "NTESTeamReceiptSendViewController.h"
 #import "NTESTeamReceiptDetailViewController.h"
 
+#import "NTESLinkAttachment.h"
+#import "NTESSessionMsgConverter.h"
+#import "NTESSessionLinkContentView.h"
+
 @interface NTESSessionViewController ()
 <UIImagePickerControllerDelegate,
 UINavigationControllerDelegate,
@@ -95,7 +99,7 @@ NIMEventSubscribeManagerDelegate>
         _titleTimer = [[NTESTimerHolder alloc] init];
         [[NIMSDK sharedSDK].systemNotificationManager addDelegate:self];
     }
-
+    
     if ([[NTESBundleSetting sharedConfig] showFps])
     {
         self.fpsLabel = [[NTESFPSLabel alloc] initWithFrame:CGRectZero];
@@ -406,6 +410,19 @@ NIMEventSubscribeManagerDelegate>
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - 图文链接
+- (void)onTapMediaItemLinkPacket:(NIMMediaItem *)item
+{
+    // 此处模拟测试数据
+    NTESLinkAttachment *attachment = [[NTESLinkAttachment alloc] init];
+    [attachment setTitle:@"暖冬季欢乐送"];
+    [attachment setLinkUrl:@"https://www.jianshu.com/u/bd57ade96e8a"];
+    [attachment setImageUrl:@"https://www.baidu.com/img/bd_logo1.png"];
+    [attachment setDescribe:@"家具满1000元减100元再返100元现金券！点击查看详情！"];
+    NIMMessage *message = [NTESSessionMsgConverter msgWithLink:attachment];
+    [self sendMessage:message];
+}
+
 
 #pragma mark - 消息发送时间截获
 - (void)sendMessage:(NIMMessage *)message didCompleteWithError:(NSError *)error
@@ -443,7 +460,7 @@ NIMEventSubscribeManagerDelegate>
     [self.view makeToast:@"录音时间太短" duration:0.2f position:CSToastPositionCenter];
 }
 
-#pragma mark - Cell事件
+#pragma mark - Cell事件 内容点击事件
 - (BOOL)onTapCell:(NIMKitEvent *)event
 {
     BOOL handled = [super onTapCell:event];
@@ -522,6 +539,16 @@ NIMEventSubscribeManagerDelegate>
         [[NTESRedPacketManager sharedManager] showRedPacketDetail:attachment.packetId];
         handled = YES;
     }
+    
+    // NIMDemoEventNameLinkingPacket
+    else if ([eventName isEqualToString:NIMDemoEventNameLinkingPacket]){
+        NIMCustomObject *object = event.messageModel.message.messageObject;
+        NTESLinkAttachment *attachment = (NTESLinkAttachment *)object.attachment;
+        
+        NSLog(@"\n  点击图文链接 :%@ \n",attachment);
+        handled = YES;
+    }
+    
     if (!handled) {
         NSAssert(0, @"invalid event");
     }

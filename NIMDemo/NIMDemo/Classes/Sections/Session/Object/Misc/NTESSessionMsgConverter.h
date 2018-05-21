@@ -16,6 +16,8 @@
 @class NTESRedPacketAttachment;
 @class NTESRedPacketTipAttachment;
 
+@class NTESLinkAttachment;
+
 @interface NTESSessionMsgConverter : NSObject
 
 + (NIMMessage *)msgWithText:(NSString *)text;
@@ -45,5 +47,8 @@
 + (NIMMessage *)msgWithRedPacket:(NTESRedPacketAttachment *)attachment;
 
 + (NIMMessage *)msgWithRedPacketTip:(NTESRedPacketTipAttachment *)attachment;
+
+// 添加链接消息
++ (NIMMessage *)msgWithLink:(NTESLinkAttachment *)attachment;
 
 @end

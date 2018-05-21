@@ -92,11 +92,11 @@
     }
     else if(_session.sessionType == NIMSessionTypeTeam)
     {
-        items = @[janKenPon,teamMeeting,fileTrans,tip,teamReceipt,redPacket];
+        items = @[janKenPon,teamMeeting,fileTrans,tip,teamReceipt,redPacket,linkPacket];
     }
     else
     {
-        items = @[janKenPon,audioChat,videoChat,fileTrans,snapChat,whiteBoard,tip,redPacket];
+        items = @[janKenPon,audioChat,videoChat,fileTrans,snapChat,whiteBoard,tip,redPacket,linkPacket];
     }
     
 

@@ -24,6 +24,8 @@
 #import "NTESRedPacketTipAttachment.h"
 #define SessionListTitle @"云信 Demo"
 
+#import "NTESLinkAttachment.h"
+
 @interface NTESSessionListViewController ()<NIMLoginManagerDelegate,NTESListHeaderDelegate,NIMEventSubscribeManagerDelegate,UIViewControllerPreviewingDelegate>
 
 @property (nonatomic,strong) UILabel *titleLabel;
@@ -360,6 +362,11 @@
             NTESRedPacketTipAttachment *attach = (NTESRedPacketTipAttachment *)object.attachment;
             text = attach.formatedMessage;
         }
+        
+        else if ([object.attachment isKindOfClass:[NTESLinkAttachment class]]) {
+            text = @"[图文链接]";
+        }
+        
         else
         {
             text = @"[未知消息]";

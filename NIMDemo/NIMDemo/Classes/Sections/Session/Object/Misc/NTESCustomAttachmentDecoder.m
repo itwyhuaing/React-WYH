@@ -17,6 +17,8 @@
 #import "NSDictionary+NTESJson.h"
 #import "NTESSessionUtil.h"
 
+#import "NTESLinkAttachment.h"
+
 @implementation NTESCustomAttachmentDecoder
 - (id<NIMCustomAttachment>)decodeAttachment:(NSString *)content
 {
@@ -46,11 +48,23 @@
                     ((NTESSnapchatAttachment *)attachment).isFired = [data jsonBool:CMFIRE];
                 }
                     break;
+                // 大表情
                 case CustomMessageTypeChartlet:
                 {
                     attachment = [[NTESChartletAttachment alloc] init];
                     ((NTESChartletAttachment *)attachment).chartletCatalog = [data jsonString:CMCatalog];
                     ((NTESChartletAttachment *)attachment).chartletId      = [data jsonString:CMChartlet];
+                }
+                    break;
+                // 图文链接
+                case CustomMessageTypeLink:
+                {
+                    attachment = [[NTESLinkAttachment alloc] init];
+                    ((NTESLinkAttachment *)attachment).title        = [data jsonString:CMLinkPacketTitle];
+                    ((NTESLinkAttachment *)attachment).linkUrl      = [data jsonString:CMLinkPacketLinkUrl];
+                    ((NTESLinkAttachment *)attachment).imageUrl     = [data jsonString:CMLinkPacketImageUrl];
+                    ((NTESLinkAttachment *)attachment).describe     = [data jsonString:CMLinkPacketDescribe];
+                    
                 }
                     break;
                 case CustomMessageTypeWhiteboard:
@@ -93,7 +107,8 @@
         NSInteger value = [((NTESJanKenPonAttachment *)attachment) value];
         check = (value>=CustomJanKenPonValueKen && value<=CustomJanKenPonValuePon) ? YES : NO;
     }
-    else if ([attachment isKindOfClass:[NTESSnapchatAttachment class]])
+    else if ([attachment isKindOfClass:[NTESSnapchatAttachment class]] ||
+             [attachment isKindOfClass:[NTESLinkAttachment class]])
     {
         check = YES;
     }
